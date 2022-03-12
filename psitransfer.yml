@@ -1,0 +1,13 @@
+version: '2.0'
+# https://mariushosting.com/how-to-install-psitransfer-on-your-synology-nas/
+services:
+  psitransfer:
+    image: psitrax/psitransfer
+    container_name: psitransfer
+    restart: always
+    environment:
+      - PSITRANSFER_UPLOAD_PASS=admin
+    ports:
+      - "3377:3000"
+    volumes:
+      - /volume1/docker2/psitransfer:/data
